@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndController : MonoBehaviour
@@ -22,5 +23,10 @@ public class EndController : MonoBehaviour
         dog.text = "Walks with the dog: " + PlayerPrefs.GetInt("dog_walks");
 
         animator.Play(PlayerPrefs.GetString("end_animation"));
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
     }
 }
